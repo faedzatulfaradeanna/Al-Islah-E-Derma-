@@ -12,6 +12,10 @@
 	<ul>
 		<li><a>Login</a></li>
 		<li><a>Register</a></li>
+		<li><a>Add donation</a></li>
+		<li><a>View Donation</a></li>
+		<li><a>Update Donation</a></li>
+		<li><a>Delete Donation</a></li>
 	</ul>
 </body>
 </html>
