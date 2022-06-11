@@ -5,13 +5,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>DONATION DETAILS</title>
+<title>Insert title here</title>
 </head>
 <body>
-	Donation Number: <c:out value="${param.donationNumber}"/><br>
-	Donation Type: <c:out value="${param.donationType}"/><br>
-	Donation Date: <c:out value="${param.donationDate}"/><br>
-	Total Donation: <c:out value="${param.donationTotal}"/><br>
+	Donation ID: <c:out value="${param.donationID}"/><br>
+	Donation Name: <c:out value="${param.donationName}"/><br>
+	Donation Category: <c:out value="${param.donationCategory}"/><br>
+	Details: <c:out value="${param.donationDetails}"/><br>
+	Target Amount Donation: <c:out value="${param.donationTarget}"/><br>
 </body>
 </html>
-

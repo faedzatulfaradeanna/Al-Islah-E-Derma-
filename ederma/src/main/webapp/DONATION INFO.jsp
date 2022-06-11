@@ -8,15 +8,17 @@
 </head>
 <body>
 	<%
-	String donationNumber = request.getParameter("donationNumber");
-	String donationType = request.getParameter("donationType");
-	String donationDate = request.getParameter("donationDate");
-	String donationTotal = request.getParameter("donationTotal");
+	String donationID = request.getParameter("donationID");
+	String donationName= request.getParameter("donationName");
+	String donationCategory = request.getParameter("donationCategory");
+	String donationDetails = request.getParameter("donationDetails");
+	double donationTarget = Double.parseDouble(request.getParameter("donationTarget"));
 	%>
 	
-	Donation Number: <%= donationNumber %><br>
-	Donation Type: <%= donationType %><br>
-	Donation Date: <%= donationDate %><br>
-	Total Donation: <%= donationTotal %><br>
+	Donation ID: <%= donationID %><br>
+	Donation Name: <%= donationName %><br>
+	Donation Category: <%= donationCategory %><br>
+	Details: <%= donationDetails %><br>
+	Target Amount Donation: <%= donationTarget %><br>
 </body>
 </html>
