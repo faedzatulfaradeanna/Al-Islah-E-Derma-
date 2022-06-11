@@ -5,20 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>AL-ISLAH E-DERMA APPS</title>
-<style>
-		.list{font-family: Arial, Helvetica, sans-serif;}
-</style>
 </head>
 <body>
-	<h1 class="list">AL-ISLAH E-DERMA MANAGEMENT SYSTEM</h1>
+	<h1>AL-ISLAH E-DERMA MANAGEMENT SYSTEM</h1>
 	
-	<ul class="list">
+	<Ol type="a">
 		<li><a>Login</a></li>
 		<li><a>Register</a></li>
 		<li><a>Add donation</a></li>
 		<li><a>View Donation</a></li>
 		<li><a>Update Donation</a></li>
 		<li><a>Delete Donation</a></li>
-	</ul>
+	</Ol>
 </body>
 </html>
