@@ -10,12 +10,11 @@
 	<h1>AL-ISLAH E-DERMA MANAGEMENT SYSTEM</h1>
 	
 	<ol type="a">
-		<li><a>Login</a></li>
-		<li><a>Register</a></li>
-		<li><a>Add donation</a></li>
-		<li><a>View Donation</a></li>
-		<li><a>Update Donation</a></li>
-		<li><a>Delete Donation</a></li>
+		<li><a href="LOGIN.html">Login</a></li>
+		<li><a href="REGISTER.html">Register</a></li>
+		<li><a href="ADD DONATION.html">Add donation</a></li>
+		<li><a href="UPDATE DONATION.html">Update Donation</a></li>
+		<li><a href="DELETE DONATION.html">Delete Donation</a></li>
 	</ol>
 </body>
 </html>
