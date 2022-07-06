@@ -13,7 +13,6 @@
             <li><a class="active" href="index.html">Home</a></li>
             <li><a href="ADD DONATION.jsp">Add Donation</a></li>
             <li><a href="LIST DONATION.jsp">List Donation</a></li>
-            <li><a href="LOGIN.jsp">Login</a></li>
           </ul>
     </header>
     <body>
