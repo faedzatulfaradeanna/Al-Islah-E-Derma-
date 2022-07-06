@@ -24,7 +24,7 @@
         <th>Category</th>
         <th>Details</th>
         <th>Target Amount</th>
-        <th colspan = "4">Action</th>
+        <th colspan = "2">Action</th>
         </tr>
     </thead>
         <c:forEach items="${donations}" var="d" varStatus="donations">
@@ -34,7 +34,6 @@
 			<td><c:out value="${d.donationCategory}"/></td>
 			<td><c:out value="${d.donationDetails}"/></td>
 			<td><c:out value="${d.targetAmount}"/></td>
-			<td><a class="btn btn-primary" href="ViewDonationController?donationId=<c:out value="${d.donationId}"/>">View</a></td>
 			<td><a class="btn btn-primary" href="UpdateDonationController?donationId=<c:out value="${d.donationId}"/>">Update</a></td>
 			<td><button class="btn btn-danger" id="<c:out value="${d.donationId}"/>" onclick="confirmation(this.id)">Delete</button></td>
 		</tr>
