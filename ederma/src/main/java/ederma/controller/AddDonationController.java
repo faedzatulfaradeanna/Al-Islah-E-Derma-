@@ -32,7 +32,9 @@ public class AddDonationController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		Donation d = new Donation();
+		d.setDonationId(Integer.parseInt(request.getParameter("donationId")));
 		d.setDonationName(request.getParameter("donationName"));
 		d.setDonationCategory(request.getParameter("donationCategory"));
 		d.setDonationDetails(request.getParameter("donationDetails"));

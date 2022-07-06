@@ -30,5 +30,4 @@ public class ConnectDB {
 		}
 		return con;
 	}
-
 }

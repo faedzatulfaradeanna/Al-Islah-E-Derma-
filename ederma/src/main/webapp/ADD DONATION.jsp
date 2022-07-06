@@ -31,7 +31,7 @@
                 </div>
                 <div class="input-box">
                   <span class="details" >Category</span>
-                  <select name="donationCategoryl">
+                  <select name="donationCategory">
 					<option value="Waqaf">Waqaf</option>
 					<option value="Sadaqah">Sadaqah</option>
 					<option value="CSR Project">CSR Project</option>

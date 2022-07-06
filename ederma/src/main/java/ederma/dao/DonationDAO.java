@@ -23,6 +23,7 @@ public class DonationDAO {
 	//add donation
 	public void addDonation(Donation bean) {
 		
+		donationId = bean.getDonationId();
 		donationName = bean.getDonationName();
 		donationCategory = bean.getDonationCategory();
 		donationDetails = bean.getDonationDetails();
@@ -33,11 +34,12 @@ public class DonationDAO {
 			con = ConnectDB.getConnection();
 			
 			//3. create statement
-			ps = con.prepareStatement("INSERT INTO Donation(donationName, donationCategory, donationDetails, targetAmount) VALUES(?,?,?,?)");
-			ps.setString(1, donationName);
-			ps.setString(2, donationCategory);
-			ps.setString(3, donationDetails);
-			ps.setDouble(4, targetAmount);
+			ps = con.prepareStatement("INSERT INTO Donation(donationId, donationName, donationCategory, donationDetails, targetAmount) VALUES(?,?,?,?,?)");
+			ps.setInt(1, donationId);
+			ps.setString(2, donationName);
+			ps.setString(3, donationCategory);
+			ps.setString(4, donationDetails);
+			ps.setDouble(5, targetAmount);
 			
 			//4. execute query
 			ps.executeUpdate();
