@@ -34,8 +34,8 @@
 			<td><c:out value="${d.donationCategory}"/></td>
 			<td><c:out value="${d.donationDetails}"/></td>
 			<td><c:out value="${d.targetAmount}"/></td>
-			<td><a class="btn btn-primary" href="ViewDonationController?id=<c:out value="${d.donationId}"/>">View</a></td>
-			<td><a class="btn btn-primary" href="UpdateDonationController?id=<c:out value="${d.donationId}"/>">Update</a></td>
+			<td><a class="btn btn-primary" href="ViewDonationController?donationId=<c:out value="${d.donationId}"/>">View</a></td>
+			<td><a class="btn btn-primary" href="UpdateDonationController?donationId=<c:out value="${d.donationId}"/>">Update</a></td>
 			<td><button class="btn btn-danger" id="<c:out value="${d.donationId}"/>" onclick="confirmation(this.id)">Delete</button></td>
 		</tr>
 		</c:forEach>
@@ -45,7 +45,7 @@
 			console.log(id);
 			var r = confirm("Are you sure you want to delete?");
 			if (r == true){
-				location.href = 'DeleteDonationController?id=' + id;
+				location.href = 'DeleteDonationController?donationId=' + id;
 				alert("Donation successfully deleted");
 			}
 			else{
