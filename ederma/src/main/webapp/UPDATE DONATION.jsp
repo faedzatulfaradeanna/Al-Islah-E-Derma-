@@ -24,11 +24,11 @@
               <div class="user-details">
                 <div class="input-box">
                   <span class="details" >Donation ID</span>
-                  <input type="text" name="donationId" placeholder="Enter donation id" value="<c:out value="${d.donationId}"/>" required/>
+                  <input type="text" name="donationId" placeholder="Enter donation id" required value="<c:out value="${d.donationId}"/>"/>
                 </div>
                 <div class="input-box">
                   <span class="details" >Donation Name</span>
-                  <input type="text" name="donationName" placeholder="Enter your donation name" value="<c:out value="${d.donationName}"/>" required/>
+                  <input type="text" name="donationName" placeholder="Enter your donation name" required value="<c:out value="${d.donationName}"/>"/>
                 </div>
                 <div class="input-box">
                   <span class="details" >Category</span>
@@ -41,12 +41,13 @@
                 </div>
                 <div class="input-box">
                   <span class="details" >Details</span>
-                  <input type="text" name="donationDetails" placeholder="Enter details" value="<c:out value="${d.donationDetails}"/>" required/>
+                  <input type="text" name="donationDetails" placeholder="Enter details" required value="<c:out value="${d.donationDetails}"/>"/>
                 </div>
                 <div class="input-box">
                   <span class="details" >Target Amount (RM)</span>
-                  <input type="text" name="targetAmount" placeholder="Enter Target Amount" value="<c:out value="${d.targetAmount}"/>" required/>
+                  <input type="text" name="targetAmount" placeholder="Enter Target Amount" required value="<c:out value="${d.targetAmount}"/>"/>
                 </div>
+                <input type="hidden" name="donationId" value="<c:out value="${d.donationId}"/>"/>
               </div>
               <div class="button">
                 <input type="submit" value="Update Donation">

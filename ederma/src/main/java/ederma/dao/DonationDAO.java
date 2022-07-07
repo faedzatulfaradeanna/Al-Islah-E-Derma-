@@ -20,32 +20,32 @@ public class DonationDAO {
 	private double targetAmount;
 	
 			private static final String ADD_DONATION = // Insert new donation
-			"INSERT INTO public.donation(donationId, donationName, donationCategory, donationDetails, targetAmount) " +
+			"INSERT INTO donation(donationId, donationName, donationCategory, donationDetails, targetAmount) " +
 			"VALUES (?, ?, ?, ?, ?);";
 			
 			private static final String GET_DONATION_BY_ID = // get 1 donation by id
 			"SELECT donationId, donationName, donationCategory, donationDetails, targetAmount" +
 			"FROM public.donation " +
-			"WHERE donation.donationId = ?;";
+			"WHERE donationId = ?;";
 			
 			private static final String GET_ALL_DONATION = // get all donation
 			"SELECT * " +
-			"FROM public.donation " +
-			"ORDER BY donation.donationId;";
+			"FROM donation " +
+			"ORDER BY donationId;";
 			
 			private static final String DELETE_DONATION_BY_ID = // Delete 1 donation by id
 			"DELETE FROM public.donation " +
-			"WHERE donation.donationId = ?;";
+			"WHERE donationId = ?;";
 			
 			private static final String UPDATE_DONATION_BY_ID = // Update 1 donation by id
-			"UPDATE public.donation " +
+			"UPDATE donation " +
 			"SET donationName = ?, donationCategory = ?, donationDetails = ?, targetAmount = ?" +
-			"WHERE donation.donationId = ?;";
+			"WHERE donationId = ?;";
 
 	
 	//add donation
 	public void addDonation(Donation bean) {
-		
+
 		donationId = bean.getDonationId();
 		donationName = bean.getDonationName();
 		donationCategory = bean.getDonationCategory();
