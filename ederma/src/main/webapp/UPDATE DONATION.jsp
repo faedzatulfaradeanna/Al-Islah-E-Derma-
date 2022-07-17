@@ -43,6 +43,7 @@
                   <span class="details" >Target Amount (RM)</span>
                   <input type="text" name="targetAmount" placeholder="Enter Target Amount" required value="<c:out value="${d.targetAmount}"/>"/>
                 </div>
+                </div>
                 <input type="hidden" name="donationId" value="<c:out value="${d.donationId}"/>"/>
               <div class="button">
                 <input type="submit" value="Update Donation">
