@@ -18,7 +18,7 @@
     </header>
     <body>
         <div class="container">
-          <div class="title" >Add Donation</div>
+          <div class="title" >Add donation</div>
           <div class="content">
             <form action="AddDonationController" method="post">
               <div class="user-details">
