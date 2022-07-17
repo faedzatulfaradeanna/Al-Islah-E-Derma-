@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>ADD DONATION</title>
-<link rel="stylesheet" href="form.css">
+<link rel="stylesheet" href="formDonation.css">
 </head>
 <body>
 	<header>
@@ -21,10 +22,6 @@
           <div class="content">
             <form action="AddDonationController" method="post">
               <div class="user-details">
-                <div class="input-box">
-                  <span class="details" >Donation ID</span>
-                  <input type="text" name="donationId" placeholder="Enter donation id" required>
-                </div>
                 <div class="input-box">
                   <span class="details" >Donation Name</span>
                   <input type="text" name="donationName" placeholder="Enter your donation name" required>

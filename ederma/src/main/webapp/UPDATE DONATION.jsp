@@ -23,10 +23,6 @@
             <form action="UpdateDonationController" method="post">
               <div class="user-details">
                 <div class="input-box">
-                  <span class="details" >Donation ID</span>
-                  <input type="text" name="donationId" placeholder="Enter donation id" required value="<c:out value="${d.donationId}"/>"/>
-                </div>
-                <div class="input-box">
                   <span class="details" >Donation Name</span>
                   <input type="text" name="donationName" placeholder="Enter your donation name" required value="<c:out value="${d.donationName}"/>"/>
                 </div>

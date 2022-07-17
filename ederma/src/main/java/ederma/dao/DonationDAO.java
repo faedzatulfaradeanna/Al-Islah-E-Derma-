@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ederma.db.ConnectDB;
-import ederma.model.Donation;
+import ederma.model.*;
+
 
 public class DonationDAO {
 	static Connection con = null;
@@ -20,8 +21,8 @@ public class DonationDAO {
 	private double targetAmount;
 	
 			private static final String ADD_DONATION = // Insert new donation
-			"INSERT INTO donation(donationId, donationName, donationCategory, donationDetails, targetAmount) " +
-			"VALUES (?, ?, ?, ?, ?);";
+			"INSERT INTO donation(donationName, donationCategory, donationDetails, targetAmount) " +
+			"VALUES (?, ?, ?, ?);";
 			
 			private static final String GET_DONATION_BY_ID = // get 1 donation by id
 			"SELECT donationId, donationName, donationCategory, donationDetails, targetAmount" +
@@ -46,7 +47,6 @@ public class DonationDAO {
 	//add donation
 	public void addDonation(Donation bean) {
 
-		donationId = bean.getDonationId();
 		donationName = bean.getDonationName();
 		donationCategory = bean.getDonationCategory();
 		donationDetails = bean.getDonationDetails();
@@ -58,11 +58,10 @@ public class DonationDAO {
 			
 			//3. create statement
 			ps = con.prepareStatement(ADD_DONATION);
-			ps.setInt(1, donationId);
-			ps.setString(2, donationName);
-			ps.setString(3, donationCategory);
-			ps.setString(4, donationDetails);
-			ps.setDouble(5, targetAmount);
+			ps.setString(1, donationName);
+			ps.setString(2, donationCategory);
+			ps.setString(3, donationDetails);
+			ps.setDouble(4, targetAmount);
 			
 			//4. execute query
 			ps.executeUpdate();
@@ -76,39 +75,38 @@ public class DonationDAO {
 	}
 	
 	//get all donations
-	public static List<Donation> getAllDonations(){
-		List<Donation> donations = new ArrayList<Donation>();
-		
-		try {
-			//call getConnection() method
-			con = ConnectDB.getConnection();
+		public static List<Donation> getAllDonations(){
+			List<Donation> donations = new ArrayList<Donation>();
 			
-			//3. create statement
-			stmt = con.createStatement();
-			String sql = GET_ALL_DONATION;
-			
-			//4. execute query
-			rs = stmt.executeQuery(sql);
-			
-			while(rs.next()) {
-				//process result
-				Donation d = new Donation();
-				d.setDonationId(rs.getInt("donationId"));
-				d.setDonationName(rs.getString("donationName"));
-				d.setDonationCategory(rs.getString("donationCategory"));
-				d.setDonationDetails(rs.getString("donationDetails"));
-				d.setTargetAmount(rs.getDouble("targetAmount"));
-				donations.add(d);
+			try {
+				//call getConnection() method
+				con = ConnectDB.getConnection();
+				
+				//3. create statement
+				stmt = con.createStatement();
+				
+				//4. execute query
+				rs = stmt.executeQuery(GET_ALL_DONATION);
+				
+				while(rs.next()) {
+					//process result
+					Donation d = new Donation();
+					d.setDonationId(rs.getInt("donationId"));
+					d.setDonationName(rs.getString("donationName"));
+					d.setDonationCategory(rs.getString("donationCategory"));
+					d.setDonationDetails(rs.getString("donationDetails"));
+					d.setTargetAmount(rs.getDouble("targetAmount"));
+					donations.add(d);
+				}
+				
+				//5. close connection
+				con.close();
+			}catch(Exception e) {
+				e.printStackTrace();
 			}
 			
-			//5. close connection
-			con.close();
-		}catch(Exception e) {
-			e.printStackTrace();
+			return donations;
 		}
-		
-		return donations;
-	}
 	
 	//get donation by id
 	public static Donation getDonationById(int donationId) {

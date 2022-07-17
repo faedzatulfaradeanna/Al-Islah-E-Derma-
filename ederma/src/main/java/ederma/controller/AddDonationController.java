@@ -34,7 +34,6 @@ public class AddDonationController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Donation d = new Donation();
-		d.setDonationId(Integer.parseInt(request.getParameter("donationId")));
 		d.setDonationName(request.getParameter("donationName"));
 		d.setDonationCategory(request.getParameter("donationCategory"));
 		d.setDonationDetails(request.getParameter("donationDetails"));
@@ -46,5 +45,4 @@ public class AddDonationController extends HttpServlet {
 		RequestDispatcher view = request.getRequestDispatcher("LIST DONATION.jsp");
 		view.forward(request, response);
 	}
-
 }

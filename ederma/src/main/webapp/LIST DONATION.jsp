@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>List Donation</title>
-<link href=list.css rel="stylesheet">
+<link href=tableDonation.css rel="stylesheet">
 </head>
 <header>
       <ul>
@@ -24,6 +24,7 @@
         <th>Category</th>
         <th>Details</th>
         <th>Target Amount</th>
+        <th>Staff Id</th>
         <th colspan = "2">Action</th>
         </tr>
     </thead>
@@ -34,6 +35,7 @@
 			<td><c:out value="${d.donationCategory}"/></td>
 			<td><c:out value="${d.donationDetails}"/></td>
 			<td><c:out value="${d.targetAmount}"/></td>
+			<td><c:out value="${d.staffid}"/></td>
 			<td><a class="btn btn-primary" href="UpdateDonationController?donationId=<c:out value="${d.donationId}"/>">Update</a></td>
 			<td><button class="btn btn-danger" id="<c:out value="${d.donationId}"/>" onclick="confirmation(this.id)">Delete</button></td>
 		</tr>
