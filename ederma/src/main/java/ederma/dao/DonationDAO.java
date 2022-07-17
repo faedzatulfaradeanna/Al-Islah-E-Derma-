@@ -16,41 +16,41 @@ public class DonationDAO {
 	static PreparedStatement ps = null;
 	static Statement stmt = null;
 	static ResultSet rs = null;
-	private int donationId;
-	private String donationName, donationCategory, donationDetails;
-	private double targetAmount;
+	private int donationid;
+	private String donationname, donationcategory, donationdetails;
+	private double targetamount;
 	
 			private static final String ADD_DONATION = // Insert new donation
-			"INSERT INTO donation(donationName, donationCategory, donationDetails, targetAmount) " +
+			"INSERT INTO donation(donationname, donationcategory, donationdetails, targetamount) " +
 			"VALUES (?, ?, ?, ?);";
 			
 			private static final String GET_DONATION_BY_ID = // get 1 donation by id
-			"SELECT donationId, donationName, donationCategory, donationDetails, targetAmount" +
-			"FROM public.donation " +
-			"WHERE donationId = ?;";
+			"SELECT * " +
+			"FROM donation " +
+			"WHERE donationid = ?;";
 			
 			private static final String GET_ALL_DONATION = // get all donation
 			"SELECT * " +
 			"FROM donation " +
-			"ORDER BY donationId;";
+			"ORDER BY donationid;";
 			
 			private static final String DELETE_DONATION_BY_ID = // Delete 1 donation by id
-			"DELETE FROM public.donation " +
-			"WHERE donationId = ?;";
+			"DELETE FROM donation " +
+			"WHERE donationid = ?;";
 			
 			private static final String UPDATE_DONATION_BY_ID = // Update 1 donation by id
 			"UPDATE donation " +
-			"SET donationName = ?, donationCategory = ?, donationDetails = ?, targetAmount = ?" +
-			"WHERE donationId = ?;";
+			"SET donationname = ?, donationcategory = ?, donationdetails = ?, targetamount = ?" +
+			"WHERE donationid = ?;";
 
 	
 	//add donation
 	public void addDonation(Donation bean) {
 
-		donationName = bean.getDonationName();
-		donationCategory = bean.getDonationCategory();
-		donationDetails = bean.getDonationDetails();
-		targetAmount = bean.getTargetAmount();
+		donationname = bean.getDonationname();
+		donationcategory = bean.getDonationcategory();
+		donationdetails = bean.getDonationdetails();
+		targetamount = bean.getTargetamount();
 		
 		try {
 			//call getConnection() method
@@ -58,10 +58,10 @@ public class DonationDAO {
 			
 			//3. create statement
 			ps = con.prepareStatement(ADD_DONATION);
-			ps.setString(1, donationName);
-			ps.setString(2, donationCategory);
-			ps.setString(3, donationDetails);
-			ps.setDouble(4, targetAmount);
+			ps.setString(1, donationname);
+			ps.setString(2, donationcategory);
+			ps.setString(3, donationdetails);
+			ps.setDouble(4, targetamount);
 			
 			//4. execute query
 			ps.executeUpdate();
@@ -91,11 +91,11 @@ public class DonationDAO {
 				while(rs.next()) {
 					//process result
 					Donation d = new Donation();
-					d.setDonationId(rs.getInt("donationId"));
-					d.setDonationName(rs.getString("donationName"));
-					d.setDonationCategory(rs.getString("donationCategory"));
-					d.setDonationDetails(rs.getString("donationDetails"));
-					d.setTargetAmount(rs.getDouble("targetAmount"));
+					d.setDonationid(rs.getInt("donationid"));
+					d.setDonationname(rs.getString("donationname"));
+					d.setDonationcategory(rs.getString("donationcategory"));
+					d.setDonationdetails(rs.getString("donationdetails"));
+					d.setTargetamount(rs.getDouble("targetamount"));
 					donations.add(d);
 				}
 				
@@ -109,7 +109,7 @@ public class DonationDAO {
 		}
 	
 	//get donation by id
-	public static Donation getDonationById(int donationId) {
+	public static Donation getDonationById(int donationid) {
 		Donation d = new Donation();
 		
 		try {
@@ -118,16 +118,16 @@ public class DonationDAO {
 			
 			//3. create statement
 			ps = con.prepareStatement(GET_DONATION_BY_ID);
-			ps.setInt(1, donationId);
+			ps.setInt(1, donationid);
 			
 			//4. execute query
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				d.setDonationId(rs.getInt("donationId"));
-				d.setDonationName(rs.getString("donationName"));
-				d.setDonationCategory(rs.getString("donationCategory"));
-				d.setDonationDetails(rs.getString("donationDetails"));
-				d.setTargetAmount(rs.getDouble("targetAmount"));
+				d.setDonationid(rs.getInt("donationid"));
+				d.setDonationname(rs.getString("donationname"));
+				d.setDonationcategory(rs.getString("donationcategory"));
+				d.setDonationdetails(rs.getString("donationdetails"));
+				d.setTargetamount(rs.getDouble("targetamount"));
 			}
 			
 			//5. close connection
@@ -140,14 +140,14 @@ public class DonationDAO {
 	}
 	
 	//delete donation
-	public void deleteDonation(int donationId) {
+	public void deleteDonation(int donationid) {
 		try {
 			//call getConnection() method
 			con = ConnectDB.getConnection();
 			
 			//3. create statement
 			ps = con.prepareStatement(DELETE_DONATION_BY_ID);
-			ps.setInt(1, donationId);
+			ps.setInt(1, donationid);
 			
 			//4. execute query
 			ps.executeUpdate();
@@ -162,11 +162,11 @@ public class DonationDAO {
 	//update donation
 	public void updateDonation(Donation bean) {
 		
-		donationId = bean.getDonationId();
-		donationName = bean.getDonationName();
-		donationCategory = bean.getDonationCategory();
-		donationDetails = bean.getDonationDetails();
-		targetAmount = bean.getTargetAmount();
+		donationid = bean.getDonationid();
+		donationname = bean.getDonationname();
+		donationcategory = bean.getDonationcategory();
+		donationdetails = bean.getDonationdetails();
+		targetamount = bean.getTargetamount();
 		
 		try {
 			//call getConnection() method
@@ -174,11 +174,11 @@ public class DonationDAO {
 			
 			//3. create statement
 			ps = con.prepareStatement(UPDATE_DONATION_BY_ID);
-			ps.setString(1, donationName);
-			ps.setString(2, donationCategory);
-			ps.setString(3, donationDetails);
-			ps.setDouble(4, targetAmount);
-			ps.setInt(5, donationId);
+			ps.setString(1, donationname);
+			ps.setString(2, donationcategory);
+			ps.setString(3, donationdetails);
+			ps.setDouble(4, targetamount);
+			ps.setInt(5, donationid);
 			
 			//4. execute query
 			ps.executeUpdate();

@@ -24,11 +24,11 @@
               <div class="user-details">
                 <div class="input-box">
                   <span class="details" >Donation Name</span>
-                  <input type="text" name="donationName" placeholder="Enter your donation name" required>
+                  <input type="text" name="donationname" placeholder="Enter your donation name" required>
                 </div>
                 <div class="input-box">
                   <span class="details" >Category</span>
-                  <select name="donationCategory">
+                  <select name="donationcategory">
 					<option value="Waqaf">Waqaf</option>
 					<option value="Sadaqah">Sadaqah</option>
 					<option value="CSR Project">CSR Project</option>
@@ -36,11 +36,11 @@
                 </div>
                 <div class="input-box">
                   <span class="details" >Details</span>
-                  <input type="text" name="donationDetails" placeholder="Enter details" required>
+                  <input type="text" name="donationdetails" placeholder="Enter details" required>
                 </div>
                 <div class="input-box">
                   <span class="details" >Target Amount (RM)</span>
-                  <input type="text" name="targetAmount" placeholder="Enter Target Amount" required>
+                  <input type="text" name="targetamount" placeholder="Enter Target Amount" required>
                 </div>
               </div>
               <div class="button">

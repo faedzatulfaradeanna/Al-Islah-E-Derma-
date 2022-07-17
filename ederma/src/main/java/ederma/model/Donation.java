@@ -1,53 +1,53 @@
 package ederma.model;
 
 public class Donation {
-	private int donationId;
-	private String donationName;
-	private String donationCategory;
-	private String donationDetails;
-	private double targetAmount;
+	private int donationid;
+	private String donationname;
+	private String donationcategory;
+	private String donationdetails;
+	private double targetamount;
 	
 	public Donation() {
 		
 	}
 
-	public int getDonationId() {
-		return donationId;
+	public int getDonationid() {
+		return donationid;
 	}
 
-	public void setDonationId(int donationId) {
-		this.donationId = donationId;
+	public void setDonationid(int donationid) {
+		this.donationid = donationid;
 	}
 
-	public String getDonationName() {
-		return donationName;
+	public String getDonationname() {
+		return donationname;
 	}
 
-	public void setDonationName(String donationName) {
-		this.donationName = donationName;
+	public void setDonationname(String donationname) {
+		this.donationname = donationname;
 	}
 
-	public String getDonationCategory() {
-		return donationCategory;
+	public String getDonationcategory() {
+		return donationcategory;
 	}
 
-	public void setDonationCategory(String donationCategory) {
-		this.donationCategory = donationCategory;
+	public void setDonationcategory(String donationcategory) {
+		this.donationcategory = donationcategory;
 	}
 
-	public String getDonationDetails() {
-		return donationDetails;
+	public String getDonationdetails() {
+		return donationdetails;
 	}
 
-	public void setDonationDetails(String donationDetails) {
-		this.donationDetails = donationDetails;
+	public void setDonationdetails(String donationdetails) {
+		this.donationdetails = donationdetails;
 	}
 
-	public double getTargetAmount() {
-		return targetAmount;
+	public double getTargetamount() {
+		return targetamount;
 	}
 
-	public void setTargetAmount(double targetAmount) {
-		this.targetAmount = targetAmount;
+	public void setTargetamount(double targetamount) {
+		this.targetamount = targetamount;
 	}
 }

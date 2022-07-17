@@ -24,12 +24,12 @@
               <div class="user-details">
                 <div class="input-box">
                   <span class="details" >Donation Name</span>
-                  <input type="text" name="donationName" placeholder="Enter your donation name" required value="<c:out value="${d.donationName}"/>"/>
+                  <input type="text" name="donationname" placeholder="Enter your donation name" required value="<c:out value="${d.donationname}"/>"/>
                 </div>
                 <div class="input-box">
                   <span class="details" >Category</span>
-                  <select name="donationCategory">
-					<option value="<c:out value="${d.donationCategory}"/>"><c:out value="${d.donationCategory}"/></option>
+                  <select name="donationcategory">
+					<option value="<c:out value="${d.donationcategory}"/>"><c:out value="${d.donationcategory}"/></option>
 					<option value="Waqaf">Waqaf</option>
 					<option value="Sadaqah">Sadaqah</option>
 					<option value="CSR Project">CSR Project</option>
@@ -37,14 +37,16 @@
                 </div>
                 <div class="input-box">
                   <span class="details" >Details</span>
-                  <input type="text" name="donationDetails" placeholder="Enter details" required value="<c:out value="${d.donationDetails}"/>"/>
+                  <input type="text" name="donationdetails" placeholder="Enter details" required value="<c:out value="${d.donationdetails}"/>"/>
                 </div>
                 <div class="input-box">
                   <span class="details" >Target Amount (RM)</span>
-                  <input type="text" name="targetAmount" placeholder="Enter Target Amount" required value="<c:out value="${d.targetAmount}"/>"/>
+                  <input type="text" name="targetamount" placeholder="Enter Target Amount" required value="<c:out value="${d.targetamount}"/>"/>
+                </div>
+                <div class="input-box">
+                  <input type="hidden" name="donationid" value="<c:out value="${d.donationid}"/>"/>
                 </div>
                 </div>
-                <input type="hidden" name="donationId" value="<c:out value="${d.donationId}"/>"/>
               <div class="button">
                 <input type="submit" value="Update Donation">
               </div>

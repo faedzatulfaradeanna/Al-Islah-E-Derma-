@@ -29,13 +29,13 @@
     </thead>
         <c:forEach items="${donations}" var="d" varStatus="donations">
 		<tr>
-			<td><c:out value="${d.donationId}"/></td>
-			<td><c:out value="${d.donationName}"/></td>
-			<td><c:out value="${d.donationCategory}"/></td>
-			<td><c:out value="${d.donationDetails}"/></td>
-			<td><c:out value="${d.targetAmount}"/></td>
-			<td><a class="btn btn-primary" href="UpdateDonationController?donationId=<c:out value="${d.donationId}"/>">Update</a></td>
-			<td><button class="btn btn-danger" id="<c:out value="${d.donationId}"/>" onclick="confirmation(this.id)">Delete</button></td>
+			<td><c:out value="${d.donationid}"/></td>
+			<td><c:out value="${d.donationname}"/></td>
+			<td><c:out value="${d.donationcategory}"/></td>
+			<td><c:out value="${d.donationdetails}"/></td>
+			<td><c:out value="${d.targetamount}"/></td>
+			<td><a class="btn btn-primary" href="UpdateDonationController?donationid=<c:out value="${d.donationid}"/>">Update</a></td>
+			<td><button class="btn btn-danger" id="<c:out value="${d.donationid}"/>" onclick="confirmation(this.id)">Delete</button></td>
 		</tr>
 		</c:forEach>
 	</table>
@@ -44,7 +44,7 @@
 			console.log(id);
 			var r = confirm("Are you sure you want to delete?");
 			if (r == true){
-				location.href = 'DeleteDonationController?donationId=' + id;
+				location.href = 'DeleteDonationController?donationid=' + id;
 				alert("Donation successfully deleted");
 			}
 			else{

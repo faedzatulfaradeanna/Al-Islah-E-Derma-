@@ -34,7 +34,7 @@ public class UpdateDonationController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int id = Integer.parseInt(request.getParameter("donationId"));
+		int id = Integer.parseInt(request.getParameter("donationid"));
 		request.setAttribute("d", DonationDAO.getDonationById(id));
 		RequestDispatcher view = request.getRequestDispatcher("UPDATE DONATION.jsp");
 		view.forward(request, response);
@@ -47,11 +47,11 @@ public class UpdateDonationController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Donation d = new Donation();
-		d.setDonationId(Integer.parseInt(request.getParameter("donationId")));
-		d.setDonationName(request.getParameter("donationName"));
-		d.setDonationCategory(request.getParameter("donationCategory"));
-		d.setDonationDetails(request.getParameter("donationDetails"));
-		d.setTargetAmount(Double.parseDouble(request.getParameter("targetAmount")));
+		d.setDonationid(Integer.parseInt(request.getParameter("donationid")));
+		d.setDonationname(request.getParameter("donationname"));
+		d.setDonationcategory(request.getParameter("donationcategory"));
+		d.setDonationdetails(request.getParameter("donationdetails"));
+		d.setTargetamount(Double.parseDouble(request.getParameter("targetamount")));
 		
 		dao.updateDonation(d);
 		

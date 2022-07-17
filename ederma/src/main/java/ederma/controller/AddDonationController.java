@@ -34,10 +34,10 @@ public class AddDonationController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Donation d = new Donation();
-		d.setDonationName(request.getParameter("donationName"));
-		d.setDonationCategory(request.getParameter("donationCategory"));
-		d.setDonationDetails(request.getParameter("donationDetails"));
-		d.setTargetAmount(Double.parseDouble(request.getParameter("targetAmount")));
+		d.setDonationname(request.getParameter("donationname"));
+		d.setDonationcategory(request.getParameter("donationcategory"));
+		d.setDonationdetails(request.getParameter("donationdetails"));
+		d.setTargetamount(Double.parseDouble(request.getParameter("targetamount")));
 		
 		dao.addDonation(d); //invoke method addShawl() in ShawlDAO
 		
