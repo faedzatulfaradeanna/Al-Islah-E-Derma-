@@ -56,7 +56,7 @@
 <body>
 	
 	<div class="header">
-  		<h1>AL-ISLAH E-DERMA</h1>
+  		<h1>AL-ISLAH E-DERMA MANAGEMENT SYSTEM</h1>
 	</div>
 	
 	<div class="navbar">
