@@ -51,6 +51,43 @@
 				return false;
 			}
 		}
+	</script>
+	<script>
+		window.onload = function(){
+			var request = new XMLHttpRequest();
+			request.open("GET", "https://al-islah-e-derma.herokuapp.com/display", true);
+			request.onload = function(){
+				var donation_obj = JSON.parse(this.response);
+				var table = document.createElement('table');
+				
+				for (var i=0; i<donation_obj.length; i++){
+					var row = table.insertRow(i);
+					if(i === 0){
+						row.style.fontWeight = 'bold';
+						var cell1 = row.insertCell(0).innerHTML = 'Donation ID';
+						var cell2 = row.insertCell(1).innerHTML = 'Donation Name';
+						var cell3 = row.insertCell(2).innerHTML = 'Donation Category';
+						var cell4 = row.insertCell(3).innerHTML = 'Donation Details';
+						var cell5 = row.insertCell(4).innerHTML = 'Target Amount';
+					}
+					else{
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						var cell4 = row.insertCell(3);
+						var cell5 = row.insertCell(4);
+						
+						cell1.innerHTML = donation_obj[i].donationid;
+						cell2.innerHTML = donation_obj[i].donationname;
+						cell3.innerHTML = donation_obj[i].donationcategory;
+						cell4.innerHTML = donation_obj[i].donationdetails;
+						cell5.innerHTML = donation_obj[i].targetamount;
+					}
+				}
+				document.getElementById('table_id').appendChild(table);
+			};
+			request.send();
+		}
 	</script> 
 </body>
 </html>
